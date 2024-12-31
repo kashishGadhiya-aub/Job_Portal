@@ -16,7 +16,7 @@ A Django-based platform for managing job postings, featuring user accounts, comp
 
 ### Step 1: Clone the Project
 ```bash
-git clone 
+git clone https://github.com/kashishGadhiya-aub/Job_Portal
 cd job_portal
 ```
 
@@ -63,16 +63,3 @@ Open your browser and visit: `http://127.0.0.1:8000/`.
 
 ---
 
-## Key Features Overview
-
-### User Management
-- Users can register, log in, and log out using the built-in authentication system.
-
-### Companies
-- Manage a company profile directly linked to a user account.
-
-### Job Listings
-- Post and manage jobs for your company.
-- Paginated views enhance navigation and user experience.
-
----# Job_Portal

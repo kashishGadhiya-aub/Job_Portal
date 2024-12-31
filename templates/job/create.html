@@ -1,0 +1,86 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8 col-sm-12">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white text-center">
+          <h2>Create Job</h2>
+        </div>
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+
+            
+            <div class="form-floating mb-3">
+              <input 
+                type="text" 
+                name="title" 
+                class="form-control" 
+                id="jobTitle" 
+                placeholder="Job Title" 
+                required>
+              <label for="jobTitle">Job Title</label>
+            </div>
+
+         
+            <div class="form-floating mb-3">
+              <textarea 
+                name="description" 
+                class="form-control" 
+                id="jobDescription" 
+                placeholder="Job Description" 
+                style="height: 150px;" 
+                required></textarea>
+              <label for="jobDescription">Job Description</label>
+            </div>
+
+          
+            <div class="form-floating mb-3">
+              <input 
+                type="text" 
+                name="location" 
+                class="form-control" 
+                id="jobLocation" 
+                placeholder="Location" 
+                required>
+              <label for="jobLocation">Location</label>
+            </div>
+
+           
+            <div class="form-floating mb-3">
+              <input 
+                type="text" 
+                name="salary_range" 
+                class="form-control" 
+                id="salaryRange" 
+                placeholder="Salary Range" 
+                required>
+              <label for="salaryRange">Salary Range</label>
+            </div>
+
+            
+            <div class="form-floating mb-3">
+              <input 
+                type="text" 
+                name="tags" 
+                class="form-control" 
+                id="jobTags" 
+                placeholder="Tags" 
+                required>
+              <label for="jobTags">Tags</label>
+            </div>
+
+           
+            <div class="d-grid">
+              <button class="btn btn-success btn-lg" type="submit">Create Job</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8 col-sm-12">
+      <div class="card shadow-sm">
+        <div class="card-header bg-danger text-white text-center">
+          <h2>Delete Job</h2>
+        </div>
+        <div class="card-body text-center">
+          <p class="fs-5">Are you sure you want to delete the job?</p>
+          <h4 class="text-danger">{{ job.title }}</h4>
+          <form method="post" class="mt-4">
+            {% csrf_token %}
+            <button class="btn btn-danger btn-lg" type="submit">Confirm Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

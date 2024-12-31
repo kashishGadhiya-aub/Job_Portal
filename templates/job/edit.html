@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h2>Edit Job</h2>
+  <form method="post">
+    {% csrf_token %}
+
+    <div class="form-floating mb-3">
+        <input type="text" name="title" class="form-control" id="floatingInput" placeholder="Job Title" value="{{ job.title }}" required>
+        <label for="floatingInput">Job Title</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <textarea name="description" class="form-control" id="floatingInput" placeholder="Job Description" required>{{ job.description }}</textarea>
+        <label for="floatingInput">Job Description</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="text" name="location" class="form-control" id="floatingInput" placeholder="Location" value="{{ job.location }}" required>
+        <label for="floatingInput">Location</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="text" name="salary_range" class="form-control" id="floatingInput" placeholder="Salary Range" value="{{ job.salary_range }}" required>
+        <label for="floatingInput">Salary Range</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="text" name="tags" class="form-control" id="floatingInput" placeholder="Tags" value="{{ job.tags }}">
+        <label for="floatingInput">Tags</label>
+    </div>
+
+    <button class="btn btn-success" type="submit">Save Changes</button>
+
+  </form>
+{% endblock %}

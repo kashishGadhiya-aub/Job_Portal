@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h2 class="mb-3">Register Your Company</h2>
+  <form method="post">
+    {% csrf_token %}
+
+    <div class="form-floating mb-3">
+        <input type="text" name="name" class="form-control" id="floatingInput" placeholder="Company Name">
+        <label for="floatingInput">Company Name</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <textarea name="address" class="form-control" id="floatingInput" placeholder="Address"></textarea>
+        <label for="floatingInput">Address</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="text" name="contact_number" class="form-control" id="floatingInput" placeholder="Contact Number">
+        <label for="floatingInput">Contact Number</label>
+    </div>
+
+    <button class="btn btn-success" type="submit">Register</button>
+
+  </form>
+  {% if error %}
+    <p style="color:red">{{ error }}</p>
+  {% endif %}
+{% endblock %}

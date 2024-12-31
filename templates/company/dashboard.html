@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10 col-sm-12">
+      {% if company %}
+      
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white text-center">
+          <h4>Company Dashboard</h4>
+        </div>
+        <div class="card-body">
+          <h2 class="text-success mb-4">Welcome to the dashboard of {{ company.name }}!</h2>
+          <p><strong>Address:</strong> {{ company.address }}</p>
+          <p><strong>Contact Number:</strong> {{ company.contact_number }}</p>
+
+          <div class="d-grid gap-2 d-md-flex justify-content-center mt-4">
+            <a href="{% url 'create_job' %}" class="btn btn-success btn-lg">Create Job</a>
+            <a href="{% url 'list_jobs' %}" class="btn btn-secondary btn-lg">View Job List</a>
+          </div>
+        </div>
+      </div>
+      {% else %}
+    
+      <div class="card shadow-sm">
+        <div class="card-header bg-warning text-dark text-center">
+          <h4>Register Your Company</h4>
+        </div>
+        <div class="card-body text-center">
+          <h2 class="text-primary mb-4">Get Started with Your Company</h2>
+          <p class="text-muted">Register your company to create and manage job postings.</p>
+          <a href="{% url 'register_company' %}" class="btn btn-primary btn-lg">Register Now</a>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

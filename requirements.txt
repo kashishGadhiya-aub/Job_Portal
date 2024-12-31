@@ -1,0 +1,3 @@
+Django~=4.2.17
+# Bootstrap
+django-bootstrap-v5~=1.0.11

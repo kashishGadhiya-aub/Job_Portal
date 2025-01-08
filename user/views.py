@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 
-# user signup
+
 def signup(request):
     if request.method == 'POST':
        
@@ -15,12 +15,12 @@ def signup(request):
         if password1 != password2:
             return HttpResponse("Passwords do not match!")
 
-        try:
+        else:
           
             if User.objects.filter(email=email).exists():
                 return HttpResponse("User already exists!")
 
-            # Create and save the new user
+
             user = User.objects.create_user(username=username, email=email, password=password1)
             user.save()
 
@@ -30,15 +30,13 @@ def signup(request):
            
             return redirect('home')
 
-        except Exception as e:
-
-            return HttpResponse(f"Error: {e}")
 
    
     return render(request, 'user/signup.html')
 
-# user signin
+
 def signin(request):
+    """ View for user login. """
     if request.method == 'POST':
    
         username = request.POST.get('username')
@@ -60,8 +58,9 @@ def signin(request):
     
     return render(request, 'user/signin.html')
 
-# signout
+
 def signout(request):
+     
     if request.method == 'POST':
 
         logout(request)

@@ -14,7 +14,6 @@ class Job(models.Model):
         - tags: Optional tags to categorize the job.
     """
 
-    # Link to the company posting the job
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
 
     
